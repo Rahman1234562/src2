@@ -4,7 +4,7 @@ import { Form } from "@/components/form";
 
 
 export default function SignUp  () {
-     const onSignIn =async (email, password) => {
+     const onSubmit =async (email, password) => {
         try {
                     const response = await fetch("/api/auth/signup",{
             method: "POST",
@@ -24,6 +24,6 @@ export default function SignUp  () {
      }
 
     return (
-        <Form signIn={false} onSubmitForm={onSignIn}/>
+        <Form signIn={false} onSubmitForm={onSubmit}/>
     )
 }
