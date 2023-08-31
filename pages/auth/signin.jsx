@@ -4,8 +4,9 @@ import { signIn } from 'next-auth/react';
 
 export default function SignIn () {
 
-    const onSubmit = (email, password) => {
-       signIn("credentials", {redirect: false, email, password})
+    const onSubmit = async (email, password) => {
+       const data = await signIn("credentials", {redirect: false, email, password});
+       console.log(data);
     }
     return (
         <>

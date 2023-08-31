@@ -1,4 +1,5 @@
-import Link from "next/link"
+import { signOut } from "next-auth/react";
+import Link from "next/link";
 
 
 export const Header = () => {
@@ -16,7 +17,7 @@ export const Header = () => {
              href={"/auth/signin"}>
                 sign in</Link>
 
-             <div className="shadow-md py-2 px-6 bg-black rounded-full cursor-pointer text-white font-semibold hove: opacity-70">
+             <div onClick={signOut} className="shadow-md py-2 px-6 bg-black rounded-full cursor-pointer text-white font-semibold hove: opacity-70">
                Log out
              </div>
            </div>

@@ -14,7 +14,7 @@ export const getByEmail = (email) => {
   return users.find((user) => user.email === email);
 };
 
-export const verifyPassword = async (hashPassword, password) =>  {
+export const verifyPassword = async (password, hashPassword) =>  {
     const isValid = await bcrypt.compare(password, hashPassword);
     return isValid
 }
@@ -34,5 +34,6 @@ users.push({
     password: hashPassword
   });
   fs.writeFileSync(filePath, JSON.stringify(users));
+  return{email}
 }
 
